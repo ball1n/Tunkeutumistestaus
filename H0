@@ -3,11 +3,11 @@ a) Sieppaa ja analysoi verkkoliikennettä
 
 Ensimmäiseksi latasin Wiresharkin
 
-![github](wireshark1.png)
+![github](wireshark1.jpg)
 
 Seurasin Wiresharkilla WLAN:in liikennettä muutaman sekunnin. Kuvassa näkyy Amazonin Data Centerin ja Privaate IP:n kommunikointia keskenään TCP ja STUN protocolin välityksellä. Myös näkyy yhteyden välityksellä siirretty bitti määrä ja muita kivoja juttuja.
 
-![github](Näyttökuva 2023-10-23 113924.png)
+![github](Näyttökuva 2023-10-23 113924.jpg)
 
 Seuraavassa kuvassa näkyy tarkemmin liikenteestä ja laitteista informaatiota. 
 Esim laitteen Interface, Ethernet yhteyden vastaanottaja tietoja 
