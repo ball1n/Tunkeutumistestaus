@@ -2,6 +2,9 @@ Alkutesti
 a) Sieppaa ja analysoi verkkoliikennettä 
 
 Ensimmäiseksi latasin Wiresharkin
-![alt text](C:\Users\olive\Desktop\wireshark1.png) 
 
-Seurasin Wiresharkilla WLAN:in liikennettä muutaman sekunnin. Kuvassa näkyy Amazonin Data Centerin ja Privaate IP:n kommunikointia keskenään TCP ja STUN protocolin välityksellä. Myös näkyy yhteyden välityksellä siirretty bitti määrä 
+![wireshark1](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/15ed3b5f-da7e-42fa-ae14-ae091e99305c)
+
+Seurasin Wiresharkilla WLAN:in liikennettä muutaman sekunnin. Kuvassa näkyy Amazonin Data Centerin ja Privaate IP:n kommunikointia keskenään TCP ja STUN protocolin välityksellä. Myös näkyy yhteyden välityksellä siirretty bitti määrä ja muita kivoja juttuja.
+
+
