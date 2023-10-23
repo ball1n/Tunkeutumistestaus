@@ -3,11 +3,11 @@ a) Sieppaa ja analysoi verkkoliikennettä
 
 Ensimmäiseksi latasin Wiresharkin
 
-![wireshark1](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/15ed3b5f-da7e-42fa-ae14-ae091e99305c)
+![wireshark1](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/cb1bfd0e-0384-470f-a318-bf5bbb2f72f0)
 
 Seurasin Wiresharkilla WLAN:in liikennettä muutaman sekunnin. Kuvassa näkyy Amazonin Data Centerin ja Privaate IP:n kommunikointia keskenään TCP ja STUN protocolin välityksellä. Myös näkyy yhteyden välityksellä siirretty bitti määrä ja muita kivoja juttuja.
 
-![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/3bd64c3c-cc96-471e-8058-6a4eed64b082)
+![Näyttökuva 2023-10-23 113924](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/061a6bbf-1a2c-4ea0-9f4a-2ecc07e2a07e)
 
 Seuraavassa kuvassa näkyy tarkemmin liikenteestä ja laitteista informaatiota. 
 Esim laitteen Interface, Ethernet yhteyden vastaanottaja tietoja 
