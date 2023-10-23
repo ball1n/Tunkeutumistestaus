@@ -7,4 +7,8 @@ Ensimmäiseksi latasin Wiresharkin
 
 Seurasin Wiresharkilla WLAN:in liikennettä muutaman sekunnin. Kuvassa näkyy Amazonin Data Centerin ja Privaate IP:n kommunikointia keskenään TCP ja STUN protocolin välityksellä. Myös näkyy yhteyden välityksellä siirretty bitti määrä ja muita kivoja juttuja.
 
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/3bd64c3c-cc96-471e-8058-6a4eed64b082)
 
+Seuraavassa kuvassa näkyy tarkemmin liikenteestä ja laitteista informaatiota. 
+Esim laitteen Interface, Ethernet yhteyden vastaanottaja tietoja 
+TCP yhteyden tietoja, mistä portista jne.
