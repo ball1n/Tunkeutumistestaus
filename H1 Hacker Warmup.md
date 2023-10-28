@@ -90,3 +90,20 @@ Sieltä "relations" kohdasta voi etsiä PDF tai Word tiedostoja, joita on ajettu
 
 ## Palaan porttiskannaus tehtäviin jos ehdin vielä
 
+## Lähteet:
+
+https://terokarvinen.com/2023/eettinen-hakkerointi-2023/#h1-hacker-warmup
+
+https://learning.oreilly.com/videos/the-art-of/9780135767849/9780135767849-SPTT_05_00/
+
+https://www.codecademy.com/learn/getting-started-with-nmap/modules/basic-nmap-scans-configurations/cheatsheet
+
+https://www.linux.fi/wiki/Nmap
+
+https://www.kali.org/docs/virtualization/install-virtualbox-guest-vm/
+
+https://overthewire.org/wargames/bandit/bandit3.html
+
+https://2021.challenge.fi/challenges
+
+https://medium.com/@theGirlWhoEncrypts/overthewire-bandit-level-1-level-2-9da2e3f51fb
