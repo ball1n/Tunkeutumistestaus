@@ -28,3 +28,23 @@ Tehtävä 2
 - Aivan sama homma, nyt vain lopussa cat (filename)
 
 ![22222](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/d3879a07-4c88-4a66-bcc8-4ebb6b42644c)
+
+b) Ratkaise Challenge.fi:stä yksi tehtävä, esim. Challenge.fi 2021 Where was this picture taken, Encoding basics. Tai joku Challenge.fi 2022. (Nimi vaihtui sattuneesta syystä, se on nykyisin Next Gen Hack Challenge)
+
+- Valitsin tehtäväksi kuvan sijainnin selvittämisen.
+
+![tetet](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/e3ccf0b0-c3d7-46df-a2b4-016faed45c92)
+
+Tämän voi ratkaista aika helposti, painamalla alt+enteriä, jonka jälkeen näet kuvan paikan. 
+
+![blac](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/a66a23c5-a863-4438-8f29-542129f0e080)
+
+c) Ratkaise PortSwigger Labs: Lab: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data. (Edellyttää ilmaista rekisteröitymistä. Tehtävän voi ratkaista pelkästään selaimen osoitekenttää muokkaamalla.)
+
+- Hyppäsin tehtävän yli
+
+d) Asenna Linux virtuaalikoneeseen. Suosittelen joko Kali (viimeisin versio) tai Debian 12-Bookworm.
+
+- Latasin Kalin täältä https://www.kali.org/get-kali/#kali-virtual-machines ja purin tiedoston, jonka jälkeen kone oli asennettu VMBoxiin.
+
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/71b95b84-1a70-4de1-8563-5d40790aba93)
