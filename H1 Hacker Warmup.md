@@ -67,3 +67,26 @@ f) Porttiskannaa kaikki koneesi (localhost) tcp-portit. Analysoi tulokset. (Edel
 
 g) Tee laaja porttiskanaus (nmap -A) omalle koneellesi (localhost), kaikki portit. Selitä, mitä -A tekee. Analysoi tulokset. (Edellisissä kohdissa mainittuja analyyseja ei tarvitse toistaa, voit vain viitata niihin ja keskittyä eroihin.).
 
+- Itselläni ei onnistu omasta mielestäni nyt tämä portti skannailu oikein. 
+  - A komennossa auttaa havaitsemaan OS:n ja version. (enable OS detection and version scanning)
+
+h) Asenna ja käynnistä jokin palvelin (apache, ssh...) koneellesi. Vertaile, miten porttiskannauksen tulos eroaa.
+
+- ei onnistu porttiskannaus toivotulla tavalla ja aika loppuu itselläni tehtävien tekemiseen. Sirryyn eteenpäin. 
+
+i) Kokeile ja esittele jokin avointen lähteiden tiedusteluun sopiva weppisivu tai työkalu. Hyviä esimerkkejä löytyy Bazzel: IntelTechniques: Tools ja Bellingcat: Resources, voit myös käyttää muuta itse valitsemaasi työkalua. Työkalua pitää siis myös kokeilla, pelkkä nimen mainitseminen ei riitä. Pidä esimerkit harmittomina, älä julkaise kenenkään henkilökohtaisia salaisuuksia raportissasi.
+
+- Itse valitsen Virustotalin ja haen "kela.fi" 
+
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/41bb80fd-64fa-49a2-998d-d4252d1c2d76)
+
+Sieltä "relations" kohdasta voi etsiä PDF tai Word tiedostoja, joita on ajettu automaattisesti VT:hen ja ladata omalle koneelle tai tutkia. 
+
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/f55734c5-aa87-4b97-811a-16cc2e0ef3ca)
+
+- Yksi toinen mielenkiintoinen on https://urlscan.io/ , jossa käyttäjät skannailee URL:eja. Sieltä voi löytää jotain jännää mitä ihmiset skannaa tajuamatta sitä, että on julkista dataa sen jälkeen.
+
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/32736e62-88cf-4c94-9360-04600018a471)
+
+## Palaan porttiskannaus tehtäviin jos ehdin vielä
+
