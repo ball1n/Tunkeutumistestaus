@@ -48,3 +48,22 @@ d) Asenna Linux virtuaalikoneeseen. Suosittelen joko Kali (viimeisin versio) tai
 - Latasin Kalin täältä https://www.kali.org/get-kali/#kali-virtual-machines ja purin tiedoston, jonka jälkeen kone oli asennettu VMBoxiin.
 
 ![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/71b95b84-1a70-4de1-8563-5d40790aba93)
+
+e) Porttiskannaa 1000 tavallisinta tcp-porttia omasta koneestasi (localhost). Analysoi tulokset.
+
+- Ensiksi selvitän koneeni IP osoitteen jota lähden skannailemaan.
+- Komennolla ifconfig tai ip addr saan selville koneeni IP osoitteen ja wlan yhteyteni IP-osoitteen.
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/7d789227-0f9a-4b0e-8c53-fdeb6e0a3295)
+
+komennolla nmpa -p1-1000 localhost scannaa halutun määrän portteja.
+En ole aivan varma mutta blokkaako palomuuri asetukseni handshaket vai miksi ei ole edes 443 auki tjsp?
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/9c50f849-1e99-4e6a-aa47-789636aec37b)
+
+f) Porttiskannaa kaikki koneesi (localhost) tcp-portit. Analysoi tulokset. (Edellisissä kohdissa mainittuja analyyseja ei tarvitse toistaa, voit vain viitata niihin ja keskittyä eroihin).
+
+- Vaihtamalla komentoon -p- nmap skannaa kaikki portit. Analyysi ei muutu kun portit ei suostu juttelemaan.
+
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/71482487-f9bb-4df9-b664-ec82ac4a0325)
+
+g) Tee laaja porttiskanaus (nmap -A) omalle koneellesi (localhost), kaikki portit. Selitä, mitä -A tekee. Analysoi tulokset. (Edellisissä kohdissa mainittuja analyyseja ei tarvitse toistaa, voit vain viitata niihin ja keskittyä eroihin.).
+
