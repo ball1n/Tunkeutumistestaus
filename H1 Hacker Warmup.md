@@ -72,7 +72,12 @@ g) Tee laaja porttiskanaus (nmap -A) omalle koneellesi (localhost), kaikki porti
 
 h) Asenna ja käynnistä jokin palvelin (apache, ssh...) koneellesi. Vertaile, miten porttiskannauksen tulos eroaa.
 
-- ei onnistu porttiskannaus toivotulla tavalla ja aika loppuu itselläni tehtävien tekemiseen. Sirryyn eteenpäin. 
+- Asensin Apache2 ja laitoin sen päälle. 
+Tämän jälkeen porttiskannasin ja portti 80 oli auko, jota Apache käyttää. 
+
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/972aa308-55ec-4e06-aa03-e1c01123600d)
+
+edited. 30.10.2023
 
 i) Kokeile ja esittele jokin avointen lähteiden tiedusteluun sopiva weppisivu tai työkalu. Hyviä esimerkkejä löytyy Bazzel: IntelTechniques: Tools ja Bellingcat: Resources, voit myös käyttää muuta itse valitsemaasi työkalua. Työkalua pitää siis myös kokeilla, pelkkä nimen mainitseminen ei riitä. Pidä esimerkit harmittomina, älä julkaise kenenkään henkilökohtaisia salaisuuksia raportissasi.
 
