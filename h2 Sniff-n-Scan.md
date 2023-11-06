@@ -95,33 +95,33 @@
 ![reda](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/0d1faffa-a9ff-4a07-a834-bcccb6918a47)
 
 # Porttiskannaa paikallinen kone (127.0.0.2 tms), sieppaa liikenne snifferillä, analysoi.
-c) nmap TCP connect scan -sT
-- sudo nmap localhost -sT 
+- c) nmap TCP connect scan -sT
+- -sudo nmap localhost -sT 
 ![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/1b4afa96-6e36-475a-b3b7-104799a77516)
 - TCP liikennettä, jossa jutellaan edestakaisin.
-d) nmap TCP SYN "used to be stealth" scan, -sS (tätä käytetään skannatessa useimmin)
+- d) nmap TCP SYN "used to be stealth" scan, -sS (tätä käytetään skannatessa useimmin)
 - sudo nmap localhost -sS
 ![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/3f1fd46f-0923-4378-b2d6-8e0dfa686c77)
 - eroaa edellisestä sen verran, että vastauksena lähtee vain saama viesti? En ole aivan varma
-e) nmap ping sweep -sn
-- sudo nmap localhost -sn
+- e) nmap ping sweep -sn
+- -sudo nmap localhost -sn
 - Wireshark ei napannut mitään liikettä
-f) nmap don't ping -Pn
-- sudo nmap localhost -Pn
+- f) nmap don't ping -Pn
+- -sudo nmap localhost -Pn
 ![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/44b05cf6-e206-4036-ab71-4736cccc3cf8)
 - Haun pitäisi estää hostin löytäminen
-g) nmap version detection -sV (esimerkki yhdestä palvelusta yhdessä portissa riittää)
-- sudo nmap 127.0.0.1 -sV (locahostilla ei onnistunut)
+- g) nmap version detection -sV (esimerkki yhdestä palvelusta yhdessä portissa riittää)
+- -sudo nmap 127.0.0.1 -sV (locahostilla ei onnistunut)
 ![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/71edb70f-250b-4d6b-935e-7f204fe0bbf7)
 - löytää, että portti 80 on auki ja on liikennettä. Mikä on HTTP portti
-h) nmap output files -oA foo. Miltä tiedostot näyttävät? Mihin kukin tiedostotyyppi sopii?
-- sudo nmap localhost -oA foo
+- h) nmap output files -oA foo. Miltä tiedostot näyttävät? Mihin kukin tiedostotyyppi sopii?
+- -sudo nmap localhost -oA foo
 ![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/de49484d-468c-4968-bb7e-efb0f8b97b64)
 
-i) nmap ajonaikaiset toiminnot (man nmap: runtime interaction): verbosity v/V, help ?, packet tracing p/P, status s (ja moni muu nappi)
-j) Ninjojen tapaan. Piiloutuuko nmap-skannaus hyvin palvelimelta? Vinkkejä: Asenna Apache. Aja nmap-versioskannaus -sV tai -A omaan paikalliseen weppipalvelimeen. Etsi Apachen lokista tätä koskevat rivit. Wiresharkissa "http" on kätevä filtteri, se tulee siihen yläreunan "Apply a display filter..." -kenttään. Nmap-ajon aikana p laittaa packet tracing päälle. Vapaaehtoinen lisäkohta: jääkö Apachen lokiin jokin todiste nmap-versioskannauksesta?
-k) UDP-skannaus. UDP-skannaa paikkalinen kone (-sU). "Mulla olis vitsi UDP:sta, mutta en tiedä menisikö se perille":
-- sudo nmap localhost -sU
+- i) nmap ajonaikaiset toiminnot (man nmap: runtime interaction): verbosity v/V, help ?, packet tracing p/P, status s (ja moni muu nappi)
+- j) Ninjojen tapaan. Piiloutuuko nmap-skannaus hyvin palvelimelta? Vinkkejä: Asenna Apache. Aja nmap-versioskannaus -sV tai -A omaan paikalliseen weppipalvelimeen. Etsi Apachen lokista tätä koskevat rivit. Wiresharkissa "http" on kätevä filtteri, se tulee siihen yläreunan "Apply a display filter..." -kenttään. Nmap-ajon aikana p laittaa packet tracing päälle. Vapaaehtoinen lisäkohta: jääkö Apachen lokiin jokin todiste nmap-versioskannauksesta?
+- k) UDP-skannaus. UDP-skannaa paikkalinen kone (-sU). "Mulla olis vitsi UDP:sta, mutta en tiedä menisikö se perille":
+- -sudo nmap localhost -sU
 ![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/bf3f1739-5623-4f2a-9608-116f6dfc7dbe)
 - Etsii UDP portteja. Port unreachable, mikä tarkoittaa, että ei ole päällä.
 
