@@ -56,7 +56,7 @@ Valitsen Adapter 2 ja juuri luodun uuden hostin
 ![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/eb438b35-d030-464d-ae3a-5b9eeaaa8fc6)
 Metasploitin VM koneesta avaan myös Network asetukset ja valitsen Adapter 1 kohtaan Host-only ja valitsen host 2
 ![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/01191d5c-7c80-4e3b-93fc-6bab2ca8d84b)
-
+ 
 
 
 
