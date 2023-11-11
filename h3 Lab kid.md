@@ -146,17 +146,17 @@ Osoita eri komennoilla, että Internet-yhteys katkeaa: 'ping 1.1.1.1', 'ping www
 
 
 ## Lähteet:
-https://terokarvinen.com/2023/eettinen-hakkerointi-2023/#h3-lab-kid
-https://github.com/Jiikiam/PenTestingCourse/blob/main/H3LabKid/h3LabKid.md
-https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-23408
-https://rikumannonen935063021.wordpress.com/2022/04/09/h2-turbo-boosted/
-https://sourceforge.net/projects/metasploitable/
-https://book.hacktricks.xyz/generic-methodologies-and-resources/shells/full-ttys
-https://learning.oreilly.com/library/view/mastering-kali-linux/9781801819770/Text/Chapter_10.xhtml#_idParaDest-250
-https://0xdf.gitlab.io/about
-https://myllys.wordpress.com/tunkeutumistestaus-2021-syksy-harjoitus-2/
-https://www.exploit-db.com/exploits/51747
-https://www.exploit-db.com/exploits/51546
+- https://terokarvinen.com/2023/eettinen-hakkerointi-2023/#h3-lab-kid
+- https://github.com/Jiikiam/PenTestingCourse/blob/main/H3LabKid/h3LabKid.md
+- https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-23408
+- https://rikumannonen935063021.wordpress.com/2022/04/09/h2-turbo-boosted/
+- https://sourceforge.net/projects/metasploitable/
+- https://book.hacktricks.xyz/generic-methodologies-and-resources/shells/full-ttys
+- https://learning.oreilly.com/library/view/mastering-kali-linux/9781801819770/Text/Chapter_10.xhtml#_idParaDest-250
+- https://0xdf.gitlab.io/about
+- https://myllys.wordpress.com/tunkeutumistestaus-2021-syksy-harjoitus-2/
+- https://www.exploit-db.com/exploits/51747
+- https://www.exploit-db.com/exploits/51546
 
 
 
