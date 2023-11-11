@@ -136,8 +136,27 @@ Osoita eri komennoilla, että Internet-yhteys katkeaa: 'ping 1.1.1.1', 'ping www
 - Haavoittuvuusskanneri kertoo esim. Apache on vanha ja mitä haavoittuvuuksia sieltä löytyy, mitä kansioita löytyy ja on "avoimena", "/#wp-config.php#: #wp-config.php# file found. This file contains the credentials.
 " poppasi pahimpana silmään, koska sieltä löytyy mahdollisesti tunnuksia.
 
-k) Kokeile jotain itsellesi uutta työkalua, joka mainittiin x-kohdan läpikävelyohjeessa
+## k) Kokeile jotain itsellesi uutta työkalua, joka mainittiin x-kohdan läpikävelyohjeessa
+- Aloitan hakemalla komennolla "services" ja valitsen UnrealIRCd, jota käsiteltiin x) kohdan artikkelissa: https://learning.oreilly.com/library/view/mastering-kali-linux/9781801819770/Text/Chapter_10.xhtml#_idParaDest-249
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/c11e66a2-61ea-4b00-904e-e611cb9fd7e6)
+- Ja kuten aikaisemmin "use 0" valitsee haluaman vaihtoehdon, "show options" näyttää infot, "set rhosts 192.168.88.3"
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/dcef0cd3-86c4-4e60-a00b-f3800a771d20)
+- Tämä hyökkäys tarvitsi tarkemmat tiedot, lshotin, payloadin ja toisen portin, jonka katsoin nmap tuloksista.
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/33801287-a9e6-4a12-a5dd-15f4f4b3fa5c)
 
+
+## Lähteet:
+https://terokarvinen.com/2023/eettinen-hakkerointi-2023/#h3-lab-kid
+https://github.com/Jiikiam/PenTestingCourse/blob/main/H3LabKid/h3LabKid.md
+https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-23408
+https://rikumannonen935063021.wordpress.com/2022/04/09/h2-turbo-boosted/
+https://sourceforge.net/projects/metasploitable/
+https://book.hacktricks.xyz/generic-methodologies-and-resources/shells/full-ttys
+https://learning.oreilly.com/library/view/mastering-kali-linux/9781801819770/Text/Chapter_10.xhtml#_idParaDest-250
+https://0xdf.gitlab.io/about
+https://myllys.wordpress.com/tunkeutumistestaus-2021-syksy-harjoitus-2/
+https://www.exploit-db.com/exploits/51747
+https://www.exploit-db.com/exploits/51546
 
 
 
