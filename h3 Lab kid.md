@@ -52,10 +52,31 @@ Osoita eri komennoilla, että Internet-yhteys katkeaa: 'ping 1.1.1.1', 'ping www
 
 - Avaan VM koneen Kali asetukset -> Network
 ![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/8dbdc04d-2ebb-4814-aef7-6b87dc9cb27c)
-Valitsen Adapter 2 ja juuri luodun uuden hostin
-![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/eb438b35-d030-464d-ae3a-5b9eeaaa8fc6)
-Metasploitin VM koneesta avaan myös Network asetukset ja valitsen Adapter 1 kohtaan Host-only ja valitsen host 2
+- Valitsen Adapter 2 ja juuri luodun uuden hostin
+- Kalin saa pois internetistä kun ruksii "cable connected" adapter 1 kohdalla, tein niin.
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/5787027d-fde0-4c0c-8645-7a05265161e6)
+
+
+- Metasploitin VM koneesta avaan myös Network asetukset ja valitsen Adapter 1 kohtaan Host-only ja valitsen host 2
 ![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/01191d5c-7c80-4e3b-93fc-6bab2ca8d84b)
+
+- Käynnistän koneet uudelleen
+
+- Meta koneesta komennolla ifconfig selvitän koneen ip-osoitteen ja pingaan google 8.8.8.8 varmistakseen, ettei kone ole internetissä
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/c7bf7ae6-79b8-45d1-92a2-2b4f06d1c2fc)
+- Jostain syystä en saa Ip osoitetta.
+- Ongelma selvitetty, Host Netwrok Managerista ei ollut DHCP päällä
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/7091bc7a-37c5-4abe-ac64-df8e4b97353c)
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/86f81fcd-e6f3-41e2-931c-28a2c12da2f8)
+- Kokeillaan uudelleen pingailuja
+- Kalin IP 192.168.88.4, ei ole avoin internettiin ja pingaus onnistuu meta Vm konetta päin.
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/ddc13017-957e-4436-8139-024192367e14)
+
+- Meta VM:n IP 192.168.88.3
+- Meta ei ole avoin internettiin ja pingaus onnistuu Kali VM konetta päin
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/711c2bcc-2938-4429-a96c-85fe39799af2)
+
+
  
 
 
