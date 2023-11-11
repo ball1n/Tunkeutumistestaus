@@ -41,7 +41,7 @@ The Metasploit Framework
 - Tein uuden koneen ladatulla Metasploitable tiedostolla
 
 
-## ) Tee koneille virtuaaliverkko, jossa
+## c) Tee koneille virtuaaliverkko, jossa
 Kali saa yhteyden Internettiin, mutta sen voi laittaa pois päältä
 Kalin ja Metasploitablen välillä on host-only network, niin että porttiskannatessa ym. koneet on eristetty intenetistä, mutta ne saavat yhteyden toisiinsa
 Osoita eri komennoilla, että Internet-yhteys katkeaa: 'ping 1.1.1.1', 'ping www.google.com', 'curl www.google.com'
