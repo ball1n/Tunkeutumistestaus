@@ -104,7 +104,7 @@ Osoita eri komennoilla, että Internet-yhteys katkeaa: 'ping 1.1.1.1', 'ping www
 - kuten kuvassa näkyy olen päässyt sisälle ja käyttäjänä on root
 
 ## g) Parempi sessio. Tee vsftpd-hyökkäyksestä saadusta sessiosta parempi. 
-- Tämä tehtävä oli itselle vaikea ja lähteenä käytin tehtävän linkkiä (https://book.hacktricks.xyz/generic-methodologies-and-resources/shells/full-ttys) ja kurssin opiskelijan tekemää mallia (https://github.com/Jiikiam/PenTestingCourse/blob/main/H3LabKid/h3LabKid.md)
+- Tämä tehtävä oli itselle vaikea ja tein sen apua käyttäen. Linkkinä: - (https://book.hacktricks.xyz/generic-methodologies-and-resources/shells/full-ttys) - (https://github.com/Jiikiam/PenTestingCourse/blob/main/H3LabKid/h3LabKid.md)
 ![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/e8e18fcb-80b3-4527-8b9c-fcf319e8b672)
 - tallennan session CTRL+Z ja etsin shell_to_meterpreter
 ![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/1e3d372e-1cd8-4e32-ab63-74adba5de094)
