@@ -41,4 +41,64 @@ PortSwigget Academy:
 Karvinen 2020: Using New Webgoat 2023.4 to Try Web Hacking
   - Tero käy läpi miten Webgoatin avulla voi suorittaa WEB tunkeutumistestausta
 
+## a) Totally Legit Sertificate. Asenna OWASP ZAP, generoi CA-sertifikaatti ja asenna se selaimeesi. Laita ZAP proxyksi selaimeesi. Osoita, että hakupyynnöt ilmestyvät ZAP:n käyttöliittymään.
+
+- Aloitan päivittämällä Kalin ja asentamalla Javan. "sudo apt-get update" ja "sudo apt-get install openjdk-17-jre"
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/1bfc7ba1-afd4-4c62-92e2-3fb415b30c1a)
+- Tämän jälkeen asennan palomuurin ja pistän sen päälle. "sudo apt-get install ufw" ja "sudo ufw enable"
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/41f7052d-5c98-42de-a0ff-4ec7d98b0302)
+
+- Käyn lataamassa ZAP:n https://www.zaproxy.org/download/
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/75160576-0369-4edd-a1a4-279b0e13b194)
+
+- Siirryn "cd Downloads" kansioon ja unzippaan tiedoston "unzip ZAP_2.14.0_Crossplatform.zip". "ls" komennolla näen, että tiedosto on purettu.
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/38d1812e-be6c-43f6-bf1e-14cd4862fa14)
+- Siirryn tiedostoon "./ZAP_2.14.0/" ja avaan sen "./zap.sh"
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/561c6392-b729-435e-ba41-afefe26c2d19)
+- Uuden CA-sertifikoinnin luominen onnistuu Tools-> Options-> Dynamic SSL Certificates
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/f12f2f28-1ead-4ee7-9066-ebb9c432c4e0)
+- Painamalla "save" se tallentuu ja komentokehotteessa näkyy myös polku minne tallentunut
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/fe80acdb-bdd6-49e8-8adf-1bb5ae6e4974)
+- Siirryn Firefoxiin, sieltä Application Menu -> Settings -> Privacy & Security -> View Certificates -> Import. Etsin tallennetun zap_root_ca.cer tiedoston ja valitsen sen. Valitsen, että luotan siihen myös.
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/aedbdd63-23fd-4782-a733-7c0827a0a9e0)
+- ZAP:ssa ei näy vielä mitään. Käyn muuttamassa portin 8080 -> 8081 ZAP:ssa 
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/a027c184-2d3e-44db-8c07-8abe75c347e8)
+- Sekä Firefoxissa network Managerista. HTTP Proxy "localhost" ja Port "8081". Täppään "Also use this proxy for HTTPS" tämä siksi, että toimii myös HTTPS sivuille?
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/06ebeebd-9d93-4cae-81d2-03deaf25485f)
+- Nyt tulee ZAP:iin dataa
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/a0084902-af7a-49e0-80ab-406e026a6e48)
+
+## b) Kettumaista. Asenna FoxyProxy Standard Firefox Addon, ja lisää ZAP proxyksi siihen.
+
+- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
