@@ -114,6 +114,81 @@ Karvinen 2020: Using New Webgoat 2023.4 to Try Web Hacking
 ![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/08064f36-a31a-4061-915f-999ae6f5e3c9)
 - Avaan tuolta muokkauksen ja vaihdan GET pyyntöä. "https://0a1900e4046767898032df98002000dd.web-security-academy.net/image?filename=....//....//....//etc/passwd HTTP/1.1"
 ![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/3d89ca24-ceb7-45e7-9f54-4b81f90ce5f1)
+- Tähän pitäisi tulla /etc/passwd sisältö mutta ei ole nyt 5min sisällä antanut mitään. Labra näyttää siltä, että olen raktaissut sen. Siirryn eteenpäin. Oman käsitykseni mukaan se tekee pyyntöjä tai etsii kansiota niin kauan, ennenkuin se löytyy?
+
+# Server Side Template Injection (SSTI)
+
+## g) Server-side template injection with information disclosure via user-supplied objects (Tämä on merkitty hieman vaikeammaksi, jätä viimeiseksi jos näyttää hankalalta)
+- Teron pelottelu onnistui, jätän viimeiseksi.
+
+# Server Side Request Forgery (SSRF)
+
+## h) Basic SSRF against the local server
+- Aloitin tehtävän menemällä tuotteen sivulle ja painamalla "check stock". ZAP liikenne näytti tältä, seuraavaksi muokkaan stockApi komentoa
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/f4074ddc-de6b-4bb8-9e86-2e7a370bad7d)
+- Liitän stockApi kohdalle URL:n 
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/f3bfeb0b-c196-4a4f-8fa0-3b833f0bfa42)
+- Olen onnistuneesti poistanut käyttäjä "carloksen"
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/4eee5587-c8d3-444d-8084-a9b0102973c3)
+
+# Cross Site Scripting (XSS)
+
+## i) Reflected XSS into HTML context with nothing encoded
+
+- Haku kentässä on XXS haavoittuvuus. Solve kentästä saa haun millä etsiä "alert" funkiota. "<script>alert(1)</script>"
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/54226e65-9384-4468-aa1d-638892d1ff15)
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/512843f3-e261-4048-ad8a-cdb4a5deed6b)
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/70b78fa4-e8f0-45a9-8e84-51def2afac31)
+- Yllättävän helppo, kun vastaus annetaan valmiiksi
+
+## j) Stored XSS into HTML context with nothing encoded
+
+- Aika sama kuin ylempi mutta säilytetty haavoittovuus, kommentti funktiossa. Samalla "<script>alert(1)</script>" mennään
+- Jätän kommentin
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/542b921e-f7ab-482f-98c9-a983ab0f778b)
+- "back to blog" jälkeen
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/b553bccb-416d-40bd-96d7-72dbdbf722d3)
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/009d9ed4-4b34-42e6-b939-25ad3cd065b1)
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/70d9dffc-b6a9-4199-8831-e0d9e4445748)
+
+## k) Asenna Webgoat 2023.4. (Uusi versio, jossa on eri tehtäviä kuin vanhemmissa)
+
+- Seuraan Teron ohjeita. https://terokarvinen.com/2023/webgoat-2023-4-ethical-web-hacking/
+- Itse olen jo asentanut Javan ja palomuurin
+- Asennan WebGoatin komennolla "wget https://github.com/WebGoat/WebGoat/releases/download/v2023.4/webgoat-2023.4.jar" 
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/8ac69fd9-3e6f-4064-aea5-7fba80f99631)
+- Seuraavaksi muutan portin toiseksi kuin mikä minulla on OWASP ZAP:ssa "java -Dfile.encoding=UTF-8 -Dwebgoat.port=8888 -Dwebwolf.port=9090 -jar webgoat-2023.4.jar"
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/eb4585f6-7e2d-44f8-9a0a-1f9cc7f855ce)
+- Luon käyttäjän Webgoattiin, ehkä nimeltä "carlos"
+
+# Ratkaise WebGoat 2023.4
+
+## m) Hijack a session (1)
+
+- Oli vaikeuksia saada liikennettä ZAP:iin mutta kun pistin Foxyproxyn päälle niin liikenne tuli esille.
+- Aloitan syöttämällä keskittyjä käyttäjiä ja salasanoja, sen jälkeen analysoin ZAP:ssa tuloksia
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/4b3090dd-4f37-47f2-8777-0315bb692b2a)
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/9aaad2bd-5a86-4676-8aad-9323395165a9)
+- hijack cookie pysyy samana. 
+
+- Palaan tehtäviin varmaan myöhemmin. Tämä ensimmäinen vaikutti jo todella vaikealta ja aika loppui kesken
+
+
+
+Lähteet: 
+- https://terokarvinen.com/2023/webgoat-2023-4-ethical-web-hacking/
+- https://terokarvinen.com/2023/eettinen-hakkerointi-2023/#h4-totally-legit-sertificate
+- https://www.youtube.com/watch?v=YO8rsCMVUyY
+- https://portswigger.net/web-security/cross-site-scripting
+- https://portswigger.net/web-security/ssrf
+- https://portswigger.net/web-security/server-side-template-injection
+- https://portswigger.net/web-security/access-control
+- https://github.com/Jiikiam/PenTestingCourse/blob/main/H4TotallyLegitSertificate/h4.md
+- https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/
+- https://owasp.org/Top10/A01_2021-Broken_Access_Control/
+- https://www.google.com/search?q=how+to+solve+Lab%3A+Basic+SSRF+against+the+local+server&sca_esv=583584307&sxsrf=AM9HkKm2YPY9CNfnvTtYhBk0yZhVbnlwDg%3A1700301153413&ei=YYlYZc3nGOLPwPAPo-OyoAs&ved=0ahUKEwiNnIqyo82CAxXiJxAIHaOxDLQQ4dUDCBA&uact=5&oq=how+to+solve+Lab%3A+Basic+SSRF+against+the+local+server&gs_lp=Egxnd3Mtd2l6LXNlcnAiNWhvdyB0byBzb2x2ZSBMYWI6IEJhc2ljIFNTUkYgYWdhaW5zdCB0aGUgbG9jYWwgc2VydmVyMgUQIRigAUj4G1DPBVjqFnABeAGQAQCYAaYBoAHYB6oBBDEyLjK4AQPIAQD4AQH4AQKoAgrCAgcQIxjqAhgnwgIEECMYJ8ICCxAAGIAEGLEDGIMBwgIREC4YgAQYsQMYgwEYxwEY0QPCAg4QLhiABBiKBRixAxiDAcICDhAuGIAEGLEDGMcBGNEDwgILEC4YgAQYsQMYgwHCAgUQLhiABMICBRAAGIAEwgIIEAAYgAQYsQPCAggQLhiABBjUAsICBBAAGAPCAgoQIxiABBiKBRgnwgIKEAAYgAQYigUYQ-IDBBgAIEGIBgE&sclient=gws-wiz-serp#fpstate=ive&vld=cid:10213f4e,vid:yblAc0upHC4,st:0
+- Myös käytetty ChatGPT suomennoksiin
+
 
 
 
