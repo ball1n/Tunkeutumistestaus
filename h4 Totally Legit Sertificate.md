@@ -70,11 +70,50 @@ Karvinen 2020: Using New Webgoat 2023.4 to Try Web Hacking
 
 ## b) Kettumaista. Asenna FoxyProxy Standard Firefox Addon, ja lisää ZAP proxyksi siihen.
 
-- 
+- latasin foxyproxyn Googlen kautta ja avasin sen extension osasta.
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/0a7723c8-89dc-4901-a429-423dea4d3088)
+- Menemällä "Add" avautui uusi ikkuna, johon syötin oman proxyni tiedot. -> "Save"
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/528ce74c-4d53-49c8-9c69-a7eada8c3474)
+- Avasin Googlen ja nyt näkyi enemmän sivuja
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/9c9e0998-814b-4f40-ab99-53e4c97fa512)
+- Itselle jäi vähän epäselväksi tämä tehtävä ja sen suorittaminen. Mikä idea tässä on? ZAP seuraa web liikennettä ja sen avulla voi löytää heikkouksia tai korjata niitä. Miten Foxyproxy liittyy tai auttaa? Tuoko se     
+  lisää infoa ZAP:in päälle vai onko vain sovellus jolla pystyy vaihtamaan proxy asetuksia? Ihan mielenkiinnosta heräsi, tuntuu, että en itse sisäistänyt tätä vaihetta aivan kokonaan. 
 
+## PortSwigger Labs. Ratkaise tehtävät. Selitä ratkaisusi: mitä palvelimella tapahtuu, mitä eri osat tekevät, miten hyökkäys löytyi, mistä vika johtuu. (Voi käyttää ZAPia, vaikka malliratkaisut käyttävät harjoitusten tekijän maksullista ohjelmaa)
 
+## c) Insecure direct object references
+ - Tehtävässä käyttäjien keskustelut tallentuu palvelimen systeemille ja hakee ne käyttämällä staattista URL-sosoitetta.
+ - Avaan ZAP:in ja aloitan tehtävän. Seuraan tehtävän ohjeita -> Live chat -> Aloitan keskustelun ja seuraan mitä tapahtuu ZAP:ssa -> ei oikein mitään -> lataan view transcript ja huomaan, että keskustelu on 
+      tallentunut. 
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/2578c941-524c-4494-8a05-5a0a81b91851)
+ - Miten tätä voi hyödyntää? Liitin URL osoitteeseen "https://0a190050038eda72805635d300ac00b1.web-security-academy.net/download-transcript**/1.txt**" Jolloin transcriptin lataus alkoi ja Carloksen salasana tuli 
+      esille.
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/4336239c-7fdb-4b72-af54-97b18284c8dd)
+ - Kirjaudun sisään carloksen salasanalla.
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/3209c0af-a2aa-4688-ac58-cac44a25b0a3)
 
+## d) File path traversal, simple case
+- Harjoituksessa on haavoittuvuus kuvien näyttämisessä. Joten availen tuotteita missä on kuvia. ZAP:ssa GET hhtps headeri näyttää tältä ja ohjeiden mukaan sitä pitäisi jatkaa "../../../etc/passwd"
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/3da9c1b6-0ddb-41b5-bb72-036e5fa24049)
+- Kopion "https://0a5d000104c343ef806fa841003400e2.web-security-academy.net/image?filename=" ja lisään perään "../../../etc/passwd" eli "https://0a5d000104c343ef806fa841003400e2.web-security-academy.net/image?filename=../../../etc/passwd HTTP/1.1" kokeilen ilman HTTP/1.1 
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/821d8d85-1d59-417b-81e3-dfaaf4b187e1)
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/ea631101-20ca-4339-a5d5-3ace65e8e223)
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/63f2c83d-86ef-47d1-ad99-18f8219f0892)
+- Harjoitus sanoo, että olen suorittanut sen. en löydä sitä etc/password kansiota itse ainakaan ZAP:sta :D Siirryn seuraavaan, kulutin liikaa aikaa jo tässä.
 
+## e) File path traversal, traversal sequences blocked with absolute path bypass
+- hyvin samanlainen tehtävä kuin aikaisempi. Pitää taas lisätä filename kohdalle "/etc/passwd"
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/378b37e8-a542-40e9-9d05-e7d91ba15c0a)
+- Itselläni oli vaikeuksia löytää miten saan noita pyyntöjä muokattua helposti mutta täältä löytyi hyvä esimerkki: https://kulonpaa.com/?p=338
+- Tämän jälkeen kun pyyntö oli lähetetty sain etc kansion tiedot
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/cfc113f0-07d3-4198-81dd-29fdd27cc590)
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/8e9ed531-c6ab-4633-ba43-2c68f0f0936f)
+
+## f) File path traversal, traversal sequences stripped non-recursively
+- Sama idea kuin aikaisemmissa tehtävissä, nyt vain pitää tehdä hausta kai jatkuva? "....//....//....//etc/passwd"
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/08064f36-a31a-4061-915f-999ae6f5e3c9)
+- Avaan tuolta muokkauksen ja vaihdan GET pyyntöä. "https://0a1900e4046767898032df98002000dd.web-security-academy.net/image?filename=....//....//....//etc/passwd HTTP/1.1"
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/3d89ca24-ceb7-45e7-9f54-4b81f90ce5f1)
 
 
 
