@@ -55,7 +55,7 @@ Karvinen 2020: Using New Webgoat 2023.4 to Try Web Hacking
 ![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/38d1812e-be6c-43f6-bf1e-14cd4862fa14)
 - Siirryn tiedostoon "./ZAP_2.14.0/" ja avaan sen "./zap.sh"
 ![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/561c6392-b729-435e-ba41-afefe26c2d19)
-- Uuden CA-sertifikoinnin luominen onnistuu Tools-> Options-> Dynamic SSL Certificates
+- Uuden CA-sertifikoinnin luominen onnistuu Tools-> Options-> Netwrok -> Server Certificates
 ![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/f12f2f28-1ead-4ee7-9066-ebb9c432c4e0)
 - Painamalla "save" se tallentuu ja komentokehotteessa näkyy myös polku minne tallentunut
 ![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/fe80acdb-bdd6-49e8-8adf-1bb5ae6e4974)
