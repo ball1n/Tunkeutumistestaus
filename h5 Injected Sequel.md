@@ -220,13 +220,15 @@ SELECT * FROM harjoitus WHERE name ='' OR '1';
 ![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/745497a4-ed2b-40ff-9343-564238bc62da)
 - Sieltä löytyy taulukot. Etsitään taulukko josta löytyy käyttäjien tiedot.
 ![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/81b5ea8b-8654-4e5a-936f-5c1f7f2a7ab6)
-- Seuraavaksi haluan saada tiedot tuolta taulukosta itselleni [tietoon](https://portswigger.net/web-security/sql-injection/cheat-sheet). "'+UNION+SELECT+column_name,NULL+FROM+all_tab_columns+WHERE+table_name='USERS_ABCDEF'--"
+- Seuraavaksi haluan saada tiedot miltä "colums" näyttää taulukossa [tietoon](https://portswigger.net/web-security/sql-injection/cheat-sheet). "'+UNION+SELECT+column_name,NULL+FROM+all_tab_columns+WHERE+table_name='USERS_RKJTUE'--"
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/98df462f-f39d-4b1f-9888-1b20280d7da4)
+- Seuraavaksi haetaan käyttäjät ja salasanat kaikille käyttäjille -> "+UNION+SELECT+USERNAME_EURSUC,+PASSWORD_LIVQPN+FROM+USERS_RKJTUE--"
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/4b01750e-aeaf-4da0-813d-92ea8077d03f)
+- Yritetään kirjautua sisään "administrator"
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/2b78450e-9e10-4d1e-ba72-09bb628dd4be)
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/8cb405b9-ed1b-4249-9fb0-487ebc6a7fac)
 
-
-
-
-
-
+# Lopetan tehtävät tähän ja jatkan sunnuntaina, jotta ehdin palauttaa ajoissa läksyt. Pahoittelut!
 
 
 
@@ -248,6 +250,7 @@ SELECT * FROM harjoitus WHERE name ='' OR '1';
 - https://www3.ntu.edu.sg/home/ehchua/programming/sql/PostgreSQL_GetStarted.html
 - https://www.cybertec-postgresql.com/en/error-permission-denied-schema-public/
 - https://www.youtube.com/watch?v=4UxUpsCZQfI
+- https://www.youtube.com/watch?v=ZbwIbIq5-eE
 
   
 
