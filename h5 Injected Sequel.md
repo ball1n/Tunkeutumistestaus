@@ -251,6 +251,7 @@ SELECT * FROM harjoitus WHERE name ='' OR '1';
 - https://www.cybertec-postgresql.com/en/error-permission-denied-schema-public/
 - https://www.youtube.com/watch?v=4UxUpsCZQfI
 - https://www.youtube.com/watch?v=ZbwIbIq5-eE
+- https://terokarvinen.com/2023/eettinen-hakkerointi-2023/#h5-injected-sequel
 
   
 
