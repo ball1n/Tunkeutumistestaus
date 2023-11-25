@@ -9,8 +9,8 @@
 - Getting Help:
   - Help on käytettävissä "help"
 
-`\h for help with SQL commands  
-\? for help with psql commands  `
+\h for help with SQL commands  
+\? for help with psql commands  
 
 - C: CREATE TABLE<br>
 
@@ -50,6 +50,27 @@ tero=> SELECT * FROM students WHERE name LIKE 'Ma%';
 
 
 - U: UPDATE
+```
+tero=> UPDATE students SET name='Tero Karvinen' WHERE name='Tero';  
+UPDATE 1  
+```
+
+- Huom. pitää käyttää yhtä sulkumerkkiä
+
+``` 
+tero=> SELECT * FROM students;  
+ id |     name  
+----+---------------  
+ 2 | Matti  
+ 4 | Maija  
+ 5 | Liisa  
+ 1 | Tero Karvinen  
+(4 rows)  
+```
+
+
+
+
 
 
 
