@@ -9,7 +9,7 @@
 - Getting Help:
   - Help on käytettävissä "help"
 
-`\h for help with SQL commands`
+`\h for help with SQL commands`<br>
 ` \? for help with psql commands`
 
 
