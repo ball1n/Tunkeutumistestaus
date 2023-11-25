@@ -177,9 +177,79 @@ SELECT * FROM harjoitus WHERE name ='' OR '1';
 
 ## d) [SQL injection vulnerability allowing login bypass](https://portswigger.net/web-security/sql-injection/lab-login-bypass)
 
-- 
+- Tässä harjoituksessa pitää löytää haavoittovuus kirjautumisessa. Pitää suorittaa SQL injektio, joka löytyy "administrator" käyttäjällä
+
+- Avaan ensiksi ZAP:n kun sitä tullaan tarvitsemaan 
+```
+./zap.sh
+```
+- Avaan labran ja siirryn siellä "My Account" sivulle -> teen testi kirjautumisen
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/0bf1e772-ae82-4678-8012-e29be82cd6f3)
+- Eli käyttäjänimen kohdalle pitää lisätä "administrator" sekä "'--", joka kommentoi jäljellä tulevaa sisältöä? [Lähde](https://portswigger.net/web-security/sql-injection/cheat-sheet)
+- Katsoin myös [videon](https://www.youtube.com/watch?v=ML3aGaloczI), jossa käytiin läpi miten labra selvitetään ja kävin syöttämässä "username" kohtaan ``` administrator'--" ja "password" = ei ollut mitään väliä -> pääsin kirtjautumaan sisään täten myös.
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/13f0cba0-d007-4151-ac7f-d8fb79535181)
+
+## e) SQL injection attack, querying the database type and version on Oracle
+
+- Tässä labrassa on SQL haavoittovuus tuote kategorian filterissä ja labrassa kerrotaan, että voidaan käyttää [UNION](https://portswigger.net/web-security/sql-injection/union-attacks) hyökkäystä
+- Availen muutamia kategorioita ja tarkistelen miltä liikenne näyttää ZAP:ssa
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/e855f2b5-cb50-4424-a1fb-60e22f1ba19f)
+- Kokeilen muuttaa GET pyynnön urlia. Käytän tehtävään lähteenä [walkthrough](https://www.youtube.com/watch?v=s4CxZ0txb6g) apua. Muokkaan pyyntöön "+UNION+SELECT+'abc','def'+FROM+dual--" ja avaan sen firefoxilla
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/30f19d66-2d85-4dfa-956e-46476cc19ef6)
+- Sieltä tulee esille syötetyt "abc" ja "def". Seuraavassa vaiheessa kokeillaan saada tietoa esim. mikä tietokanta sivulla on käytössä lisäämällä pyyntöön "+UNION+SELECT+%20banner,%20'def'%20FROM%20v$version--"
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/cc9e8825-c911-4632-975e-b5553f0b06c6)
+- ja sieltä selviää mitä on käytössä 
+  - CORE 11.2.0.2.0 Production = Oracle database ja muut liittyy myös Oracleen
+
+## f) SQL injection attack, querying the database type and version on MySQL and Microsoft
+
+- Hieman samanlainen labra kuin edellisessä tehtävässä. Tässä haavoittovuus löytyy samasta paikasta ja methodina edellinen UNION hyökkäys. Eroa on, että vastassa on MySQL ja Microsoft.
+- Aloitan avaamalla labran ja availemalla kategorioita taas. Liikenne ZAP:sta, muokataan taas "category=" jälkeen 
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/30abed90-4b6b-4a50-ae6a-8aa369fc4201)
+- [Täältä](https://portswigger.net/web-security/sql-injection/cheat-sheet) katsoin komennon Microsoftin osalta millä saa tietoon databasen. "'UNION%20SELECT@@version,%20NULL%23"
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/2f87f541-41b0-4973-92af-59310c5d87e5)
+- Pyyntö palauttaa version "8.0.35-0ubuntu0.20.04.1", olisko mikä palvelin ja versio? :D
+
+## g) SQL injection attack, listing the database contents on non-Oracle databases
+
+- Sama idea kuin aikaisemmissa, UNION hyökkäys mutta tällä kertaa pitää selvittää taulukon nimi ja "colums it contains" -> hakea taulukko, jossa on käyttäjänimet ja salasanat käyttäjille.
+- Aloitan avaamalla labran -> avaan kategorian labrassa -> ZAP -> Manual request editor -> muokkaan GET pyyntöön "'+UNION+SELECT+'abc','def'+FROM+dual--" ja send 
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/a92746b5-2e61-41bd-b3ba-283e95bb7f0e)
+- Seuraavaksi pitäisi selvittää taulukon nimi ja taulukot. Miten? Tarvin apua "solution" kohdasta, "
+'+UNION+SELECT+table_name,NULL+FROM+all_tables--" on vastaus onnellisuuteen. Katsotaan mitä saadaan tulokseksi tuolla.
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/745497a4-ed2b-40ff-9343-564238bc62da)
+- Sieltä löytyy taulukot. Etsitään taulukko josta löytyy käyttäjien tiedot.
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/81b5ea8b-8654-4e5a-936f-5c1f7f2a7ab6)
+- Seuraavaksi haluan saada tiedot tuolta taulukosta itselleni [tietoon](https://portswigger.net/web-security/sql-injection/cheat-sheet). "'+UNION+SELECT+column_name,NULL+FROM+all_tab_columns+WHERE+table_name='USERS_ABCDEF'--"
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Lähteet
+
+- https://terokarvinen.com/2016/03/05/postgresql-install-and-one-table-database-sql-crud-tutorial-for-ubuntu/
+- https://portswigger.net/web-security/sql-injection/union-attacks
+- https://github.com/ball1n/Tunkeutumistestaus/blob/main/h4%20Totally%20Legit%20Sertificate.md
+- https://owasp.org/www-project-top-ten/2017/A1_2017-Injection
+- https://www3.ntu.edu.sg/home/ehchua/programming/sql/PostgreSQL_GetStarted.html
+- https://www.cybertec-postgresql.com/en/error-permission-denied-schema-public/
+- https://www.youtube.com/watch?v=4UxUpsCZQfI
+
+  
 
 
 
