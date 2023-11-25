@@ -12,6 +12,19 @@
 `\h for help with SQL commands`<br>
 ` \? for help with psql commands`
 
+- C: CREATE TABLE
+    `tero=> CREATE TABLE students (id SERIAL PRIMARY KEY, name VARCHAR(200));
+CREATE TABLE`
+
+  - "Serial ID" on hyvä pistää "Primary Key:ksi" jokaiselle taululle (table). -> on helpompi tehdä linkkejä, jotka viittaavat databaseen.
+  
+
+- C: Create Records: INSERT
+  `tero=> INSERT INTO students(name) VALUES ('Tero');
+INSERT 0 1`
+
+
+
 
 
 
