@@ -140,7 +140,9 @@ INSERT INTO harjoitus(name) VALUES ('HIFK');
 ## Read
 
 - Komennolla haen sisällön
- ```SELECT * FROM harjoitus;```
+ ```
+SELECT * FROM harjoitus;
+```
 ![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/60c7bbbf-d7fb-458f-b06b-e11153de1873)
 
 ## Update
@@ -151,16 +153,31 @@ UPDATE harjoitus SET name='Suomen mestari' WHERE name='HIFK';
 ```
 ![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/e3e5427a-1b99-432b-978a-122e983f06d0)
 
+## Delete
+
+- Poistetaan taulukosta komennolla 
+```
+ELETE FROM harjoitus WHERE name='KVANTAA';
+```
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/6567d04b-2d73-4325-9663-807418c15909)
+
+## b) SQLi me. Kuvaile yksinkertainen SQL-injektio, ja demonstroi se omaan tietokantaasi psql-komennolla. Selitä, mikä osa on käyttäjän syötettä ja mikä valmiina ohjelmassa. 
+
+- Omaa "harjoitus" tietokantaani olisi helppo suorittaa yksinkertainen kysely tällä hetkellä. [Lähde](https://portswigger.net/web-security/sql-injection)
+
+```
+SELECT * FROM harjoitus WHERE name ='' OR '1';
+```
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/1c59a560-44c1-4f5d-b3ef-14d4fddd78a2)
+
+- Tämä palauttaisi kaikki "name" kohdassa olevat tiedot, koska ehto '1'='1' on aina tosi. Valmiiksi tehdyillä kyselyillä voisi tämän estää. 
 
 
+## PortSwigger Labs
 
+## d) [SQL injection vulnerability allowing login bypass](https://portswigger.net/web-security/sql-injection/lab-login-bypass)
 
-
-
-
-
-
-
+- 
 
 
 
