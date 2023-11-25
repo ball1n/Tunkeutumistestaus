@@ -35,12 +35,12 @@ INSERT 0 1`<br>
  5 | Liisa
 (4 rows)`
   - SQL on helppo etsiä tietoja. Yleisesti on helppo hakea numeroiden avulla "WHERE" avulla. Oppaassa demonstroitiin "LIKE" haku, mutta usein vältetään hakua tekstillä -> on hidasta<br>
-tero=> SELECT * FROM students WHERE name LIKE 'Ma%';
- id | name
-----+-------
- 2 | Matti
- 4 | Maija
-(2 rows)
+tero=> SELECT * FROM students WHERE name LIKE 'Ma%';  
+ id | name  
+----+-------  
+ 2 | Matti  
+ 4 | Maija  
+(2 rows)  
 
 
 - U: UPDATE
