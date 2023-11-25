@@ -9,8 +9,8 @@
 - Getting Help:
   - Help on käytettävissä "help"
 
-\h for help with SQL commands  ~~~
-\? for help with psql commands  ~~~
+`\h for help with SQL commands  
+\? for help with psql commands  `
 
 - C: CREATE TABLE<br>
 
