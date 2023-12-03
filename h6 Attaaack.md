@@ -77,9 +77,26 @@
 ![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/cfab1751-b38e-41a3-806a-9856e0ba8f88)
 - Seuraavaksi laitan winukan samaan verkkoon hyökkäyskoneeni Kalin kanssa. Koneen settings -> Network ja sieltä vaihdetaan yhteys Host-only Adapteri ja valitaan sama adapteri kuin hyökkäyskoneessa. Tämän jälkeen käynnistetään winukka kone uudestaan ja kokeillaan pingailla.
 ![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/7296e06f-0e74-48fb-8af4-fb559c78c6d4)
+- tsekataan että winukalla ei pääse nettiin 
+```
+ping 8.8.8.8
+```
+- katotaan molempien koneiden IP-osoitteet ja pingailaan ristiin. Molemmilla koneilla sai yhteydet toisiinsa.
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/d18fd2cd-38aa-4c90-a580-51c89e3045a6)
 
+## b) Trustme.lnk. Kokeile PhishSticksin revshell vihamielistä tiedostoa, joka avaa käänteisen shellin hyökkääjän koneelle. Selitä, mitä tapahtuu ja miksi. Testaa, että pysyt antamaan kohdekoneelle komentoja reverse shellin kautta.
 
-
+- Lataan [nc64.exe](https://github.com/therealhalonen/PhishSticks/blob/master/payloads/revshell_demo/.payload/nc64.exe) tiedoston "lasti" kansioon, jonka teen hyökkäyskoneelle. Teen myös tekstitiedoston, johon kirjoitan vain random sisältöä. 
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/4575b95c-8e89-469e-90e2-3ab50eb425db)
+- Seuraavaksi teen winukka koneelleni kansion johon tuon [linkistä](https://github.com/therealhalonen/PhishSticks/blob/master/payloads/revshell/README.md) haetun revshell koodin ja vaihdan iippariksi oman Kalin IP-osoitteen.
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/d6c93faf-7a49-4ac6-ba25-a0e215709fbe)
+- Otan molemmat koneet pois internetistä ja aloitan kokeilun. Aloitan hyökkäyskoneeltani 
+```
+python3 -m http.server 80
+```
+```
+nc -lvnp 9001
+```
 
 
 
