@@ -69,8 +69,11 @@
 - Lähteenä toimii: Halonen, Rajala ja Ollikainen 2023: [Installing Windows 10 on a virtual machine](https://github.com/therealhalonen/PhishSticks/blob/master/notes/ollikainen/windows.md)
 - Aloitan lataamalla .iso filun [linkistä](https://www.microsoft.com/en-us/evalcenter/download-windows-10-enterprise) ja lataan ISO – Enterprise LTSC downloads 64-bit
 ![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/6f8fdf17-dd9f-422f-8eb1-1486be6901c6)
-- Annan koneelle nimen, vaihdan verison Windows 10 ja lisään muistia. Loput vaiheet menen default vaihtoehdoilla. Vaihdetaan vielä prossujen määrä 1->4
+- Annan koneelle nimen, vaihdan verison Windows 10 ja lisään muistia. Loput vaiheet menen default vaihtoehdoilla. Vaihdetaan vielä prossujen määrä 1 -> 4
 ![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/8dd08095-b7aa-44e1-ad36-b8e7cb1fd523)
+- Käynnistän winukka koneeni ja aloitettaessa kone kysyy asennustiedostoa, johon valitsen lataamani .iso filun -> Start
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/8f21832b-5192-4ce4-b729-5d447e1262ca)
+- 
 
 
 
