@@ -90,28 +90,75 @@ ping 8.8.8.8
 ![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/4575b95c-8e89-469e-90e2-3ab50eb425db)
 - Seuraavaksi teen winukka koneelleni kansion johon tuon [linkistä](https://github.com/therealhalonen/PhishSticks/blob/master/payloads/revshell/README.md) haetun revshell koodin ja vaihdan iippariksi oman Kalin IP-osoitteen.
 ![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/d6c93faf-7a49-4ac6-ba25-a0e215709fbe)
-- Otan molemmat koneet pois internetistä ja aloitan kokeilun. Aloitan hyökkäyskoneeltani 
+- Otan molemmat koneet pois internetistä ja aloitan kokeilun. Aloitan hyökkäyskoneeltani kuuntelemaan porttia 9001 ja hostaamaan http serveriä portti 80:lla.
 ```
 python3 -m http.server 80
 ```
 ```
 nc -lvnp 9001
 ```
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/eb40f11f-9b8b-49a9-bbed-d1992a0e6b8e)
+- ei toiminut. Löysin, että phistickin projektissa Ollikaisella oli ollut sama ongelma [linkki](https://github.com/therealhalonen/PhishSticks/blob/master/notes/ollikainen/notes.md#week-47) ja yritän pistää Kalistani palomuurin pois. 
+
+```
+sudo ufw disable
+```
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/f3657285-6619-4188-8433-27921aaaa133)
+- Kokeillaan aikaisemmat stepit uudelleen. Ei toiminut sama virheilmoitus mutta sitten tajusin, en ollut pistänyt IP-osoitetta jokaiseen tarvittavaan paikkaan. Kun avasin vbs tiedoston sain yhteyden winukkaan kalilta.
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/e855f4bc-15ee-4f5f-822d-c98278dafa7d)
+- En saa toimimaan, jatkan eteenpäin. 
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/9f55a986-db33-4e9a-bbd1-7344dad677ba)
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/77a8f437-236d-4b4a-9599-01ee324da248)
+- Mutta ideana olisi, että kun usb syötetään tai tiedosto avataan niin revshell koodi avaa hyökkääjän tekstitiedoston ja lataa nc64.exen ja suorittaa sen, jolloin yhteys saavuitetaan. 
+
+
+## d) PageRank. Laita linkki raporttiisi kurssisivun kommentiksi.
+
+## c) Attaaack! MITRE Attack Enterprise Matrix: Demonstroi viisi tekniikkaa viidestä eri taktiikasta.
+
+## Gather Victim Host Information:
+ - T1592.001	Hardware 
+   T1592.002	Software
+   T1592.003	Firmware
+
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/5ad1a07d-2931-4ecc-b8be-e0adf94f8115)
+
+- Nmappaan winukan ip-osoitetta, jotta saisin tietää mahdollisimman paljon -sA komennossa jotta saisin tietää version ja OS, mikä kohdekoneella on. Ainut hyödyllinen tieto itselleni on MAC address, joka kertoo, että on ORacle VB NIC.
+
+## Phishing for Information
+
+- T1598.002	Spearphishing Attachment
+
+- Voisin koristellä hienon sähköpostin esimerkiksi Terolle, jossa olisi linkki minkä Tero tietenkin avaisi. Kyseisestä linkistä latautuisi Terolle [aikaisemman tehtävän](https://github.com/therealhalonen/PhishSticks/blob/master/payloads/revshell/README.md) reveshell koodi ja minä valkohattu hakkerinä sulkisin juuri avatun yhteyden Teron koneelle.
+
+
+## Acquire Access
+
+- Koska en ole loistava hakkeri vielä, menisin sieltä mistä aita on matalin ja ostaisin käyttäjätunnukset "BIG COMPANYN" työntekijältä. Tämä on erittäin tehokas taktiikka, koska tästä ei nouse ns. "hälytystä" ja ympäristössä pyörii tuttu henkilö ellei sitten ala korottelemaan äänekkäästi oikeuksiaan tai kopioimaan suuria määriä tietoja ja täten seurantarajat ylittyy. LAPSUS$ on tunnettu käyttävän tämmöisiä alkeellisia taktiikoita mutta ne valitettavasti toimivat erittäin hyvin. Mitä korkeammat käyttöoikeudet tai isommassa roolissa oleva työntekijä, sitä suuremmat vahingot. En muista nyt tarkalleen lukua mutta about yli 70% tietoturvariskeistä tai hyökkäyksistä ovat käyttäjien virheiden aiheuttamia. 
+
+## Brute Force
+
+- T1110.001	Password Guessing
+
+- En lähde nyt demonstroimaan mutta etsin [lähteen](https://www.youtube.com/watch?v=Ia9ZcB9CEYw), jossa käydään läpi miten saadaan tehtyä helppo bruteforce ohjelma. Itselläni on heikko koodaustausta mutta uskon, että ajan kanssa saisin toimivan bf koodin.
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/503fcad4-5dc9-43eb-a727-528fab69228b)
+
+- Kyseinen koodi on aivan alussa mutta se periaatteessa tuo 3 random kirjainta/numeroa. Eli sillä voisi bruteforcata 3 merkin salasanan? Charlengthiä muuttamalla koodi lisää merkkejä.
+
+
+## Lähteet
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- https://attack.mitre.org/
+- https://terokarvinen.com/2023/eettinen-hakkerointi-2023/#h6-attaaack
+- https://www.microsoft.com/en-us/evalcenter/download-windows-10-enterprise
+- https://attack.mitre.org/resources/faq/#faq-0-0-header
+- https://github.com/therealhalonen/PhishSticks
+- https://www.youtube.com/@phishsticks_pentest/videos
+- https://learning.oreilly.com/library/view/antivirus-bypass-techniques/9781801079747/B17257_01_Epub_AM.xhtml#_idParaDest-22
+- https://ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-managing-working-with-files.htm
+- https://unix.stackexchange.com/questions/421808/shortest-way-to-download-from-github
+- https://security.stackexchange.com/questions/118603/how-can-i-detect-the-remote-operating-system
+- https://www.mygreatlearning.com/blog/nmap-commands/
+- https://www.youtube.com/watch?v=Ia9ZcB9CEYw
