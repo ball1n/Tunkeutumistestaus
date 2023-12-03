@@ -73,7 +73,11 @@
 ![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/8dd08095-b7aa-44e1-ad36-b8e7cb1fd523)
 - Käynnistän winukka koneeni ja aloitettaessa kone kysyy asennustiedostoa, johon valitsen lataamani .iso filun -> Start
 ![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/8f21832b-5192-4ce4-b729-5d447e1262ca)
-- 
+- Seuraan [Installing Windows 10 on a virtual machine](https://github.com/therealhalonen/PhishSticks/blob/master/notes/ollikainen/windows.md) vaiheita Windows 10 asennuksissa ja tadaa, asennettu.
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/cfab1751-b38e-41a3-806a-9856e0ba8f88)
+- Seuraavaksi laitan winukan samaan verkkoon hyökkäyskoneeni Kalin kanssa. Koneen settings -> Network ja sieltä vaihdetaan yhteys Host-only Adapteri ja valitaan sama adapteri kuin hyökkäyskoneessa. Tämän jälkeen käynnistetään winukka kone uudestaan ja kokeillaan pingailla.
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/7296e06f-0e74-48fb-8af4-fb559c78c6d4)
+
 
 
 
