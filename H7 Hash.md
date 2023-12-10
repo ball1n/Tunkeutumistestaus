@@ -15,15 +15,29 @@
 
 ## a) Hashcat. Asenna Hashcat ja testaa sen toimivuus ratkaisemalla tiiviste.
 
-
+-Lähteenä käytän Teron tekemää [opasta](https://terokarvinen.com/2022/cracking-passwords-with-hashcat/)
 - Aloitan päivittämällä Kalin ja asentamalla hascatin mutta se olikin jo asennettu valmiiksi Kaliin. No muutama paketti taisi päivittyä siitä, eli ei mennyt ihan hukkaan. 
 ![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/3185c318-b3b5-4ea5-91aa-b0c65f6104c0)
 ```
 sudo apt-get update
 ```
-$ sudo apt-get -y install hashid hashcat wget
+```
+sudo apt-get -y install hashid hashcat wget
+```
 
+- Tein kansion johon aion ladata sanakirjan
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/8b227427-67a1-4adf-bf25-917c3a47aaa5)
 
+- Lataan kansion 
+```
+wget https://github.com/danielmiessler/SecLists/raw/master/Passwords/Leaked-Databases/rockyou.txt.tar.gz
+``` tar xf rockyou.txt.tar.gz
+ rm rockyou.txt.tar.gz
+```
+
+-ja puran sen tämän jälkeen
+
+![image](https://github.com/ball1n/Tunkeutumistestaus/assets/117892213/b01f0855-fda5-489a-a692-2d8f0fa432a6)
 
 
 
