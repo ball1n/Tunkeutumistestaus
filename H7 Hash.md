@@ -137,4 +137,13 @@ hashcat -m 1400 'f5bc7fcc7f5b3b6af7ff79e0feafad6d1a948b6a2c18de414993c1226be48c1
 - done
 
 
+Lähteet: 
 
+- https://terokarvinen.com/2022/cracking-passwords-with-hashcat/
+- https://terokarvinen.com/2023/crack-file-password-with-john/
+- https://www.md5hashgenerator.com/
+- https://forum.howtoforge.com/threads/device-1-not-enough-allocatable-device-memory-for-this-attack.90161/
+- https://github.com/JanaHalt/Ethical-Hacking-2023/blob/main/h7%20Hash.md
+- https://github.com/sawulohi/PenTest/tree/main/h7
+- https://github.com/therealhalonen/penetration_testing/blob/master/h5/personal_cheatsheet.md
+- https://github.com/miljonka/Tunkeutumistestaus/wiki/h5_Final-Countdown#y-the-super-ultimate-hakk3r-che33tsheet-001-tee-tiivistelm%C3%A4-omista-ja-kavereiden-parhaista-tunketumistekniikoista-ole-t%C3%A4sm%C3%A4llinen-liit%C3%A4-komennot-mukaan-t%C3%A4m%C3%A4n-kohdan-vastaus-lienee-pidempi-kuin-aiempien-x-teht%C3%A4vien-viittaa-l%C3%A4hteisiin-t%C3%A4ss%C3%A4-alakohdassa-ei-tarvitse-ajaa-komentoja-tietokoneella
